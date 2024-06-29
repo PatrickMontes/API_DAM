@@ -19,4 +19,13 @@ public class ClientService {
     public List<Client> getAllClient(){
         return  clientRepository.findAll();
     }
+    
+    public Client createClient(Client newClient) {
+    	Client saved = clientRepository.save(newClient); 
+    	return saved;
+    }
+    
+    public List<Client> signin(String mail,String password) {
+    	return clientRepository.findByEmailAndClave(mail, password);
+    }
 }

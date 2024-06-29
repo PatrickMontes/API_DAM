@@ -28,5 +28,7 @@ public class Client {
     @JoinColumn(name="distrito_id")
     private District distrito_id;
     private String telefono;
+    private String email;
+    private String clave;
 
 }

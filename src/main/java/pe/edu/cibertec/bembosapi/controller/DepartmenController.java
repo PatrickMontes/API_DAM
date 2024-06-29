@@ -5,13 +5,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import pe.edu.cibertec.bembosapi.entity.Department;
 import pe.edu.cibertec.bembosapi.repository.DepartmenRepository;
 import pe.edu.cibertec.bembosapi.service.DepartmenService;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/api/departmen")
 public class DepartmenController {
     private final DepartmenService departmenService;
@@ -20,9 +21,9 @@ public class DepartmenController {
         this.departmenService = departmenService;
     }
     @GetMapping("/list")
-    public ResponseEntity<List<Department>>getAllDepartment(){
-        List<Department> departments = departmenService.getAllDepartment();
-        return ResponseEntity.ok(departments);
+    public List<Department>getAllDepartment(){
+        return  departmenService.getAllDepartment();
+
     }
 
 

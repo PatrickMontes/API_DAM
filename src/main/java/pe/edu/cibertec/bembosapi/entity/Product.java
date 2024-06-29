@@ -22,6 +22,6 @@ public class Product {
     private String descripcion;
     private int stock;
     private double precio;
-    private String foto_id;
+    private String foto_url;
 
 }

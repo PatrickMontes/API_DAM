@@ -12,7 +12,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "DetallePedido")
+@Table(name = "detallepedido")
 public class OrderDetails {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,7 +21,7 @@ public class OrderDetails {
 	private int cantidad;
 	@Column(name = "precioUni")
     private Double precioUni;
-    @OneToOne
+    //@OneToOne
     @JoinColumn(name="idPedido")
     private Order idPedido;
     @OneToOne

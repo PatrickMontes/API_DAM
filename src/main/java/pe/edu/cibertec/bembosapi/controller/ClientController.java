@@ -28,8 +28,8 @@ public class ClientController {
         return clientService.getAllClient();
     }
     @PostMapping("/signin")
-    public ResponseEntity<String> iniciarSesion(@RequestBody String mail, @RequestBody String password) {
-    	List<Client> login = clientService.signin(mail, password);
+    public ResponseEntity<String> signin(@RequestBody Client newCli) {
+    	List<Client> login = clientService.signin(newCli.getEmail(), newCli.getClave());
         String mensaje = "";
         if (!login.isEmpty()) {
             mensaje = "Bienvenido";

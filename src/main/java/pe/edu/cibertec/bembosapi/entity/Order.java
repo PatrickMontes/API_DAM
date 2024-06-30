@@ -1,6 +1,7 @@
 package pe.edu.cibertec.bembosapi.entity;
 
 import java.sql.Date;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -26,4 +27,5 @@ public class Order {
     @OneToOne
     @JoinColumn(name="cliente_id")
     private Client cliente_id;
+    List<OrderDetails> listDetail;
 }

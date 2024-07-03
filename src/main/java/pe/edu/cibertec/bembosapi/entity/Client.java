@@ -18,15 +18,6 @@ public class Client {
     private String tipodocumento ;
     private String numdocumento;
     private String direccion;
-    @OneToOne
-    @JoinColumn(name = "departamento_id")
-    private Department departamento_id;
-    @OneToOne
-    @JoinColumn(name = "provincia_id")
-    private Province provincia_id;
-    @OneToOne
-    @JoinColumn(name="distrito_id")
-    private District distrito_id;
     private String telefono;
     private String email;
     private String clave;

@@ -24,8 +24,8 @@ public class ClientService {
     	Client saved = clientRepository.save(newClient); 
     	return saved;
     }
-    
-    public List<Client> signin(String mail,String password) {
-    	return clientRepository.findByEmailAndClave(mail, password);
+
+    public Client login(String email, String clave) {
+        return clientRepository.findByEmailAndClave(email, clave).orElse(null);
     }
 }

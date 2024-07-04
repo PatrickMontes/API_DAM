@@ -23,19 +23,20 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @GetMapping("/list")
-    public List<Product> getAllProducts() {
-         return productService.getAllProducts();
-    }
 
     @GetMapping ("/producto-id/{id}")
     public Optional<Product> getProductsBYId(@PathVariable("id") int id){
        return productService.getProductById(id);
     }
+
+
     @GetMapping("/producto-categoria/{categoryId}")
     public List<Product> getProductsByCategory(@PathVariable("categoryId") int categoryId) {
          return productService.getProductsByCategory(categoryId);
 
     }
-
+    @GetMapping("/list")
+    public List<Product> getAllProducts() {
+        return productService.getAllProducts();
+    }
 }
